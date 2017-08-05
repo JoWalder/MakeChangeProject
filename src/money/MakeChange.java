@@ -1,12 +1,20 @@
 package money;
+
 import java.util.Scanner;
 
 public class MakeChange {
 	public static void main(String[] args) {
-		double[] cents = {0.25, 0.10, 0.05, 0.01};
-		int[] bills = {20, 10, 5, 1};
-		double[] prices = {};
-		
-	}
+		double price=0.0, tendered=0.0;
 
+		Scanner kb = new Scanner(System.in);
+		System.out.println("What is the price of the item you want to buy? ");
+		price = kb.nextDouble();
+		System.out.println("How much did the customer pay? ");
+		tendered =  kb.nextDouble();
+		
+		
+		
+		
+
+	}
 }
