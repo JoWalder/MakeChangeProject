@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class MakeChange {
 	public static void main(String[] args) {
-		double price = 0.0, tendered = 0.0, cash;
-
+		double price = 0.0, tendered = 0.0;
+		
 		Scanner kb = new Scanner(System.in);
 
 		System.out.println("What is the price of the item you want to buy? ");
@@ -17,47 +17,36 @@ public class MakeChange {
 		if (tendered < price) {
 			System.out.println("Hey, you still owe me money!");
 		}
+		kb.close();
 
 		if (tendered == price) {
 			System.out.println("You paid the exact amount, no change back.");
 		}
 
-		double overPay = tendered - price;
+		double overPay = tendered - price; // difference between
 		System.out.println("I owe you: $ " + overPay);
 
-		int overPay2 = (int) (overPay * 100);
-		//System.out.println(overPay2);
+		int overPay2 = (int) (overPay) * 100;// casting to an int
 
-		int dollars = overPay2 / 100;
-		System.out.println(dollars);
-		int twen = 0;
-		int ten = 0;
-		int five = 0;
-		int one = 0;
-				
-		if (dollars >= 20) {
-			 twen = dollars % 20;
-			 System.out.println("That's " + twen + " dollars");
-		}
-		
-		else if (dollars < 20 && dollars >= 10) {
-			ten = dollars % 10;
-			System.out.println("That's " + ten + " dollars");
-		}
-		
-		else if (dollars <= 5 && dollars > 1) {
-			five = dollars % 5;
-			System.out.println("That's " + five + " dollars");
-		}
-		
-		else {
-			System.out.println("That's " + one + " dollars");
+		int tens = overPay2 / 1000;
+		if (tens > 0) {
+			overPay2 = overPay2 % 1000;
+			System.out.println(tens + " ten dollar bill(s)");
 		}
 
+		int fives = overPay2 / 500;
+		if (fives > 0) {
+			overPay2 = overPay2 % 500;
+			System.out.println(fives + " five dollar bill(s)");
+		}
 		
-		int cents = overPay2 % 100;
-		
-		System.out.println(cents);
-
+		int ones = overPay2/100;
+		if (ones > 0) {
+			overPay2 = overPay2 % 100;
+			System.out.println(ones + "one dollar bill(s)");
+			
+			
+		}
 	}
+
 }
