@@ -12,9 +12,15 @@ public class MakeChange {
 		System.out.println("How much did the customer pay? ");
 		tendered =  kb.nextDouble();
 		
+		if (tendered < price ) {
+			System.out.println("Hey, you still owe me money!");
+		}
+		if(tendered == price) {
+			System.out.println("You paid the exact amount, no change back.");
+		}
 		
 		
 		
-
+		
 	}
 }
